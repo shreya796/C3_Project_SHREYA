@@ -6,7 +6,12 @@ public class RestaurantService {
     private static List<Restaurant> restaurants = new ArrayList<>();
 
     public Restaurant findRestaurantByName(String restaurantName){
-        return null;
+        for(Restaurant restaurant: getRestaurants()) {
+            if (restaurant.getName() == restaurantName)
+                return restaurant;
+            else
+                throw new restaurantNotFoundException(restaurantName);
+        }
         //DELETE ABOVE STATEMENT AND WRITE CODE HERE
     }
 
